@@ -42,8 +42,8 @@ console.log(activeTask,"activeTask");
 
   // Get the task based on activeTask
   const task = activeBoardData?.task.find(
-    (t, index) => index === activeTask.task && t.status === activeTask.coloumn
-  );
+    (t, index) => index === activeTask?.task && t?.status === activeTask?.coloumn
+  ) || {};
 
   console.log(task,"task");
   if (!task) {
@@ -140,11 +140,11 @@ console.log(activeTask,"activeTask");
         {/* Subtasks */}
         <div className="mt-5">
           <h3 className="text-md text-gray-400 font-medium">
-            {task.subtasks.filter((subtask) => subtask.isChecked).length} of{" "}
-            {task.subtasks.length} subtasks completed
+            {task?.subtasks?.filter((subtask) => subtask.isChecked).length} of{" "}
+            {task?.subtasks?.length||0} subtasks completed
           </h3>
           <div className="mt-2 space-y-2">
-            {task.subtasks.map((subtask, index) => (
+            {task?.subtasks?.map((subtask, index) => (
               <div
                 key={index}
                 className={`flex gap-2 items-center ${
