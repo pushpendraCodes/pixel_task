@@ -4,7 +4,8 @@ import { FaRegEye } from "react-icons/fa";
 
 import Dashboard from "./compo/Dashboard";
 import { Context } from "./context/DataContext";
-import NewBoardModel from "./compo/newBoardModel";
+import NewBoardModel from "./compo/NewBoardModel";
+
 // import { Context } from './context/dataContext';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         </div>
       )}
 
-      {newBoardModalOpen && <NewBoardModel />}
+      {newBoardModalOpen && <NewBoardModel/>}
       <Dashboard />
     </>
     // </Router>
